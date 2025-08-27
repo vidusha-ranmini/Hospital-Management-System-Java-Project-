@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #A7C7E7;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.hospital.AppointmentController">
+    <VBox spacing="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <Label text="Appointment Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="patientNameLabel" text="Welcome, [Patient Name]" style="-fx-font-size: 16px;"/>
+            <Button text="Logout" onAction="#handleLogout" />
+        </HBox>
+
+        <GridPane vgap="10" hgap="10" style="-fx-background-color: white; -fx-padding: 15px; -fx-background-radius: 5;">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <DatePicker fx:id="appointmentDate" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <!-- Time -->
+            <Label text="Time:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="appointmentTime" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="09:00 AM" />
+                        <String fx:value="10:00 AM" />
+                        <String fx:value="11:00 AM" />
+                        <String fx:value="02:00 PM" />
+                        <String fx:value="03:00 PM" />
+                        <String fx:value="04:00 PM" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Label text="Doctor:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="doctorSelector" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Dr. John Smith" />
+                        <String fx:value="Dr. Sarah Johnson" />
+                        <String fx:value="Dr. Michael Brown" />
+                        <String fx:value="Dr. Emily Davis" />
+                        <String fx:value="Dr. Robert Wilson" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Label text="Reason:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextArea fx:id="reasonText" prefRowCount="3" prefColumnCount="20" wrapText="true" 
+                     GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <Button text="Add Appointment" onAction="#handleAddAppointment" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+                <Button text="Update" onAction="#handleUpdateAppointment" style="-fx-background-color: #2196F3; -fx-text-fill: white;" />
+                <Button text="Delete" onAction="#handleDeleteAppointment" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+                <Button text="Clear" onAction="#handleClearForm" style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" />
+            </HBox>
+        </GridPane>
+        <TableView fx:id="appointmentTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="120"/>
+                <TableColumn fx:id="timeColumn" text="Time" prefWidth="100"/>
+                <TableColumn fx:id="doctorColumn" text="Doctor" prefWidth="150"/>
+                <TableColumn fx:id="reasonColumn" text="Reason" prefWidth="250"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Hospital Management System-2.jnlp">
+  <information>
+    <title>Hospital Management System-2</title>
+    <vendor>Vidusha Ranmini</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\javax.persistence-2.1.0.jar" size="162126" download="eager" />
+    <jar href="lib\mysql-connector-j-9.0.0.jar" size="2590119" download="eager" />
+    <jar href="lib\ojdbc8.jar" size="7084287" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="hospital.management.system.pkg2.HospitalManagementSystem2"  name="Hospital Management System-2" />
+  <update check="always"/>
+</jnlp>

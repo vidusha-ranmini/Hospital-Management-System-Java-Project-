@@ -1,0 +1,101 @@
+package com.mycompany.hospital;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Patient {
+
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/hospital"; // Change to your database URL
+    private static final String USER = "root"; // Change to your database user
+    private static final String PASS = ""; // Change to your database password
+
+    private String fullName;
+    private int age;
+    private String gender;
+    private String nic;
+    private String password;
+
+    public Patient(String fullName, int age, String gender, String nic, String password) {
+        this.fullName = fullName;
+        this.age = age;
+        this.gender = gender;
+        this.nic = nic;
+        this.password = password;
+    }
+
+    public boolean register() {
+        String sql = "INSERT INTO patients (full_name, age, gender, nic, password) VALUES (?, ?, ?, ?, ?)";
+
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, fullName);
+            pstmt.setInt(2, age);
+            pstmt.setString(3, gender);
+            pstmt.setString(4, nic);
+            pstmt.setString(5, password);
+            pstmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean login(String nic, String password) {
+        String sql = "SELECT * FROM patient WHERE nic = ? AND password = ?";
+        
+        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, nic);
+            pstmt.setString(2, password);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.next(); // If there is a result, login is successful
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="282.0" prefWidth="521.0" style="-fx-padding: 20; -fx-background-color: lavender;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashboardController">
+
+    <!-- Centered Title at the Top -->
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 10;">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Welcome to HavenCare Hospital!" />
+        </HBox>
+    </top>
+   <center>
+        <VBox alignment="CENTER_LEFT" prefHeight="358.0" prefWidth="257.0" spacing="15" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
+            <Button onAction="#handlePatientLogin" style="-fx-pref-width: 96px;" text="Patient Login" />
+            <Button onAction="#handleDoctorLogin" style="-fx-pref-width: 96px;" text="Doctor Login" />
+            <Button onAction="#handleAdminLogin" style="-fx-pref-width: 96px;" text="Admin Login" />
+        </VBox>
+   </center>
+   <right>
+      <AnchorPane prefHeight="197.0" prefWidth="292.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="158.0" fitWidth="271.0" layoutX="-9.0" layoutY="18.0">
+               <image>
+                  <Image url="@hospital.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </right>
+
+       
+</BorderPane>

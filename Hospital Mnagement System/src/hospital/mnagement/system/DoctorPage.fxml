@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospital.mnagement.system.DoctorPageController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane fx:id="login_form" prefHeight="550.0" prefWidth="330.0" styleClass="white-bg" stylesheets="@../../../design/pageDesign.css">
+               <children>
+                  <FontAwesomeIconView fill="#b8229a" glyphName="USER_MD" layoutX="130.0" layoutY="102.0" size="80.0" wrappingWidth="72.00000017881393" />
+                  <Label layoutX="103.0" layoutY="115.0" text="Login Account" textFill="#b8229a">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="126.0" layoutY="146.0" text="Doctor Portal">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="login_doctorID" layoutX="40.0" layoutY="188.0" onAction="#loginAccount" prefHeight="30.0" prefWidth="250.0" promptText="Doctor ID" stylesheets="@../../../design/pageDesign.css">
+                     <styleClass>
+                        <String fx:value="textfield-2" />
+                        <String fx:value="white-bg" />
+                     </styleClass></TextField>
+                  <PasswordField fx:id="login_Password" layoutX="41.0" layoutY="226.0" onAction="#loginAccount" prefHeight="30.0" prefWidth="250.0" promptText="Password">
+                     <styleClass>
+                        <String fx:value="textfield-2" />
+                        <String fx:value="white-bg" />
+                     </styleClass></PasswordField>
+                  <TextField fx:id="login_showpassword" layoutX="41.0" layoutY="226.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" stylesheets="@../../../design/pageDesign.css" visible="false">
+                     <styleClass>
+                        <String fx:value="textfield-1" />
+                        <String fx:value="white-bg" />
+                     </styleClass></TextField>
+                  <CheckBox fx:id="login_checkBox" layoutX="40.0" layoutY="266.0" mnemonicParsing="false" onAction="#loginShowPassword" text="Show Password" />
+                  <Button fx:id="login_loginBtn" layoutX="40.0" layoutY="295.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="46.0" prefWidth="250.0" stylesheets="@../../../design/pageDesign.css" text="Login">
+                     <styleClass>
+                        <String fx:value="btn-2" />
+                        <String fx:value="radius" />
+                     </styleClass></Button>
+                  <FontAwesomeIconView fill="#b8229a" glyphName="HOSPITAL_ALT" layoutX="129.0" layoutY="430.0" size="6em" text="" />
+                  <ComboBox fx:id="login_user" layoutX="90.0" layoutY="456.0" onAction="#switchPage" prefHeight="30.0" prefWidth="150.0" promptText="Select User" stylesheets="@../../../design/pageDesign.css">
+                     <styleClass>
+                        <String fx:value="radius" />
+                        <String fx:value="textfield-2" />
+                        <String fx:value="white-bg" />
+                     </styleClass></ComboBox>
+                  <Label layoutX="72.0" layoutY="504.0" text="Have no account yet?" />
+                  <Hyperlink fx:id="login_registerhere" layoutX="189.0" layoutY="501.0" onAction="#switchForm" text="Register here" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="register_form" layoutX="10.0" layoutY="10.0" prefHeight="550.0" prefWidth="330.0" styleClass="white-bg" stylesheets="@../../../design/pageDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <FontAwesomeIconView fill="#b8229a" glyphName="USER_PLUS" layoutX="129.0" layoutY="83.0" size="80.0" wrappingWidth="72.00000017881393" />
+                  <Label layoutX="92.0" layoutY="96.0" text="Register Account" textFill="#b8229a">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="126.0" layoutY="127.0" text="Doctor Portal">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="register_fullname" layoutX="40.0" layoutY="166.0" prefHeight="30.0" prefWidth="250.0" promptText="Full Name" styleClass="textfield-2" stylesheets="@../../../design/pageDesign.css" />
+                  <TextField fx:id="register_email" layoutX="40.0" layoutY="203.0" prefHeight="30.0" prefWidth="250.0" promptText="Email Address" styleClass="textfield-2" stylesheets="@../../../design/pageDesign.css" />
+                  <TextField fx:id="register_doctorid" layoutX="40.0" layoutY="239.0" prefHeight="30.0" prefWidth="250.0" promptText="Doctor ID" styleClass="textfield-2" stylesheets="@../../../design/pageDesign.css" />
+                  <PasswordField fx:id="register_password" layoutX="40.0" layoutY="275.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield-2" stylesheets="@../../../design/pageDesign.css" />
+                  <TextField fx:id="register_showpassword" layoutX="41.0" layoutY="275.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield-1" stylesheets="@../../../design/pageDesign.css" visible="false" />
+                  <CheckBox fx:id="register_checkbox" layoutX="40.0" layoutY="319.0" mnemonicParsing="false" onAction="#registerShowPassword" styleClass="textfield-2" text="Show Password" />
+                  <Button fx:id="register_signupBtn" layoutX="40.0" layoutY="348.0" mnemonicParsing="false" onAction="#registerAccount" prefHeight="46.0" prefWidth="250.0" stylesheets="@../../../design/pageDesign.css" text="Sign Up">
+                     <styleClass>
+                        <String fx:value="btn-2" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                  </Button>
+                  <FontAwesomeIconView fill="#b8229a" glyphName="HOSPITAL_ALT" layoutX="129.0" layoutY="479.0" size="6em" />
+                  <Label layoutX="62.0" layoutY="504.0" text="Already have an account?" />
+                  <Hyperlink fx:id="register_loginHere" layoutX="197.0" layoutY="501.0" onAction="#switchForm" text="Login here" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

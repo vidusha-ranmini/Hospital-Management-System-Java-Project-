@@ -30,21 +30,21 @@ Each role enables smooth management of hospital-related activities, making the s
 
 ---
 
-## 🛠 Technical Highlights
+##  Technical Highlights
 - **Frontend:** JavaFX (for an intuitive and interactive UI)  
 - **Backend:** Java  
 - **Database:** MySQL (secure data storage and retrieval)  
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
-### ✅ Prerequisites
+###  Prerequisites
 - [Java JDK 11 ]
 - [MySQL Server] 
 - IDE (IntelliJ IDEA / Eclipse / NetBeans recommended)
 
-### ⚙️ Setup Instructions
+###  Setup Instructions
 1. Clone the repository:
    ```bash
    git clone https://github.com/vidusha-ranmini/Hospital-Management-System-Java-Project-.git

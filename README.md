@@ -16,15 +16,15 @@ Each role enables smooth management of hospital-related activities, making the s
 ---
 
 ##  Key Functionalities
-- ** Patient Notes Management**  
+- **Patient Notes Management**  
   - Doctors can create, update, and maintain detailed records of patient consultations.  
   - Notes include symptoms, diagnoses, and prescribed treatments.
 
-- ** Appointment Management**  
+- **Appointment Management**  
   - Patients can seamlessly schedule appointments.  
   - Doctors can manage their availability and schedules efficiently.
 
-- ** Billing System**  
+- **Billing System**  
   - Admins can generate detailed invoices for treatments and services.  
   - Ensures transparency and efficient hospital finance management.
 

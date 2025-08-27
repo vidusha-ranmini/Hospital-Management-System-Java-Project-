@@ -31,9 +31,9 @@ Each role enables smooth management of hospital-related activities, making the s
 ---
 
 ##  Technical Highlights
-- **Frontend:** JavaFX (for an intuitive and interactive UI)  
+- **Frontend:** JavaFX 
 - **Backend:** Java  
-- **Database:** MySQL (secure data storage and retrieval)  
+- **Database:** MySQL 
 
 ---
 
